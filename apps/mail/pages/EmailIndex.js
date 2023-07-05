@@ -5,10 +5,24 @@ import EmailList from '../cmps/EmailList.js'
 
 export default {
     template: `
-            <RouterLink to="/email">
-                <section class="compose-container">
-                <!-- TODO -->
-                </section>
+            <RouterLink class="grid" to="/email">
+
+                <fieldset class="search-bar flex justify-center">
+                    <legend>search icon</legend>
+                    <!-- TODO -->
+                    <input v-model="txt" placeholder="Search mail" />
+                </fieldset>
+
+                <nav class="label-container">
+                    <ul class="clean-list">
+                        <li><a href="#">Inbox</a></li>
+                        <li><a href="#">Starred</a></li>
+                        <li><a href="#">Important</a></li>
+                        <li><a href="#">Sent</a></li>
+                        <li><a href="#">Draft</a></li>
+                        <li><a href="#">Trash</a></li>
+                    </ul>
+                </nav>
                 <section class="email-index">
                     <EmailList :emails="emails"
                     @remove="removeEmail"/>

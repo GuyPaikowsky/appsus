@@ -1,0 +1,13 @@
+fieldset.search-bar {
+    border: 1px solid lightgray;
+    border-radius: .2rem;
+}
+  
+.search-bar input {
+    width: 100%;
+    border-radius:.7rem;
+}
+
+.label-container {
+    
+}

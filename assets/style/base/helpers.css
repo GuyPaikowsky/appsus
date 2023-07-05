@@ -12,6 +12,10 @@
     justify-content: center;
 }
 
+.flex.justify-end{
+    justify-content: end;
+}
+
 .flex.justify-between{
     justify-content: space-between;
 }

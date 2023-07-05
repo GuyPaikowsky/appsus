@@ -6,6 +6,11 @@ export default {
         <section class="email-details">
             <h1>{{ email.title }}</h1>
             <p>{{ email.txt }}</p>
+            <section class="actions">
+                <h3>Previous Email</h3>
+                <h3>Delete</h3>
+                <h3>Next Email</h3>
+            </section>
         </section>
     `,
     data() {

@@ -4,10 +4,10 @@ export default {
     props: ['emails'],
     template: `
         <section class="email-list">
-            <ul>
-            <li v-for="email in emails" :key="email.id">
+            <ul class="clean-list">
+                <li v-for="email in emails" :key="email.id">
                     <EmailPreview :email="email"/>
-                    <section class="">
+                    <section>
                         <button @click="onRemoveEmail(email.id)">x</button>
                         <!-- <button @click="onOpenEmail(email.id)">read more</button> -->
                     </section>
