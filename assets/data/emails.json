@@ -1,0 +1,103 @@
+[
+    {
+      "title": "Welcome",
+      "txt": "Thank you for joining our mailing list!",
+      "isRead": true
+    },
+    {
+      "title": "Special Offer",
+      "txt": "Get 20% off your next purchase with this exclusive coupon code.",
+      "isRead": false
+    },
+    {
+      "title": "Important Announcement",
+      "txt": "Please review the updated terms and conditions of our service.",
+      "isRead": true
+    },
+    {
+      "title": "New Product Release",
+      "txt": "Introducing our latest product that will revolutionize the way you work.",
+      "isRead": false
+    },
+    {
+      "title": "Limited Time Sale",
+      "txt": "Don't miss out on our biggest sale of the year!",
+      "isRead": true
+    },
+    {
+      "title": "Upcoming Event",
+      "txt": "Join us for an exciting event filled with workshops, networking, and more.",
+      "isRead": false
+    },
+    {
+      "title": "Product Update",
+      "txt": "We've made some enhancements to our product based on your feedback.",
+      "isRead": true
+    },
+    {
+      "title": "Customer Success Story",
+      "txt": "Read how one of our customers achieved great success with our product.",
+      "isRead": false
+    },
+    {
+      "title": "Holiday Greetings",
+      "txt": "Wishing you a joyful holiday season filled with love and happiness.",
+      "isRead": true
+    },
+    {
+      "title": "Important Reminder",
+      "txt": "Don't forget to complete your registration before the deadline.",
+      "isRead": false
+    },
+    {
+      "title": "Exclusive VIP Access",
+      "txt": "As a valued customer, you now have access to exclusive VIP benefits.",
+      "isRead": true
+    },
+    {
+      "title": "Survey Invitation",
+      "txt": "Help us improve our services by participating in a quick survey.",
+      "isRead": false
+    },
+    {
+      "title": "New Feature Announcement",
+      "txt": "Discover the exciting new features we've added to our platform.",
+      "isRead": true
+    },
+    {
+      "title": "Industry Insights",
+      "txt": "Stay informed with the latest trends and insights in your industry.",
+      "isRead": false
+    },
+    {
+      "title": "Important Security Update",
+      "txt": "Protect your account by following these important security measures.",
+      "isRead": true
+    },
+    {
+      "title": "Referral Program",
+      "txt": "Refer a friend and earn rewards for both of you!",
+      "isRead": false
+    },
+    {
+      "title": "Monthly Newsletter",
+      "txt": "Catch up on our latest news, updates, and articles in our newsletter.",
+      "isRead": true
+    },
+    {
+      "title": "Member Exclusive Discount",
+      "txt": "Enjoy a special discount available only to our loyal members.",
+      "isRead": false
+    },
+    {
+      "title": "Product Tutorial",
+      "txt": "Learn how to make the most out of our product with our detailed tutorial.",
+      "isRead": true
+    },
+    {
+      "title": "Important Policy Update",
+      "txt": "Review the updated policies that govern the use of our services.",
+      "isRead": false
+    }
+
+]
