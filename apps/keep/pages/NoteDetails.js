@@ -4,16 +4,16 @@ export default {
 	template: `
       <section class="note-details" v-if="note">
       <h2>
-                <span @click="isEditing.title = !isEditing.title">
-                    {{ isEditing.title ? '' : 'Edit' }}
-                </span>
+		<span @click="isEditing.title = !isEditing.title">
+		  {{ isEditing.title ? '' : 'Edit' }}
+		</span>
         <input v-if="isEditing.title" v-model="note.title" @blur="isEditing.title = false" type="text">
         <span v-else>{{ note.title }}</span>
       </h2>
       <p>
-                <span @click="isEditing.txt = !isEditing.txt">
-                    {{ isEditing.txt ? '' : 'Edit' }}
-                </span>
+		<span @click="isEditing.txt = !isEditing.txt">
+		  {{ isEditing.txt ? '' : 'Edit' }}
+		</span>
         <input v-if="isEditing.txt" v-model="note.info.txt" @blur="isEditing.txt = false" type="text">
         <span v-else>{{ note.info.txt }}</span>
       </p>
