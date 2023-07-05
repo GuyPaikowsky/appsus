@@ -63,6 +63,7 @@ function getNextEmailId(emailId) {
 }
 
 function _createEmails() {
+    // let emails = []      // is used as a dev tool to reset emails from local storage
     let emails = utilService.loadFromStorage(EMAIL_KEY)
     if (!emails || !emails.length) {
         emails = emailList

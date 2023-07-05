@@ -9,7 +9,7 @@ export default {
                     <EmailPreview :email="email"/>
                     <section class="">
                         <button @click="onRemoveEmail(email.id)">x</button>
-                        <button @click="onOpenEmail(email.id)">read more</button>
+                        <!-- <button @click="onOpenEmail(email.id)">read more</button> -->
                     </section>
                 </li>
             </ul>

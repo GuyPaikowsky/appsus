@@ -17,6 +17,6 @@ export default {
         const { emailId } = this.$route.params
         emailService.get( emailId )
             .then( email => this.email = email )
-            .catch( err => showErrorMsg('Error: something went wrong with opening this email') )
+            .catch( err => showErrorMsg('Error: something went wrong while attempting to open this email') )
     }
 }
