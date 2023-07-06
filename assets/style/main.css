@@ -16,6 +16,3 @@
 /* Apps */
 @import 'apps/mail/EmailIndex.css';
 @import 'apps/note/NoteIndex.css';
-
-/* Icons */
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined');
