@@ -8,7 +8,7 @@ export default {
         <li v-for="note in notes" :key="note.id">
           <NotePreview :note="note" @update="onUpdateNote"/>
           <section class="actions">
-            <button @click="onRemoveNote(note.id)">x</button>
+            <span class="material-symbols-outlined" @click="onRemoveNote(note.id)">delete</span>
           </section>
         </li>
       </TransitionGroup>
