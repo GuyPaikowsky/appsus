@@ -21,6 +21,7 @@ export default {
             notes: [],
             filterBy: null,
             newNote: {
+                type: 'NoteTxt',
                 title: '',
                 info: {
                     txt: ''
@@ -50,10 +51,18 @@ export default {
     methods: {
 
         addNote(newNote) {
+            console.log('Before save in NoteIndex:', newNote);
             noteService.save(newNote)
                 .then(note => {
                     this.notes.unshift(note)
-                    this.newNote = {title: '', info: {txt: ''}, isPinned: false} // Reset form
+                    this.newNote = {
+                        title: '',
+                        info: {
+                            txt: ''
+                        },
+                        isPinned: false,
+                        style: {backgroundColor: '#FFFFFF'}
+                    } // Reset form
                 })
                 .catch(err => {
                     console.error('Cannot add note', err)
@@ -91,3 +100,4 @@ export default {
         NoteAdd
     }
 }
+

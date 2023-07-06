@@ -81,10 +81,10 @@ function save(note) {
     if (note.id) {
         return storageService.put(NOTE_KEY, note)
     } else {
-        return storageService.post(NOTE_KEY, note)
+        const newNote = _createNote(note)
+        return storageService.post(NOTE_KEY, newNote)
     }
 }
-
 function getFilterBy() {
     return {...gFilterBy}
 }
@@ -97,35 +97,6 @@ function setFilterBy(filterBy = {}) {
 }
 
 // TODO: remove all commented-out material...
-
-// function setSortBy(sortBy = {}) {
-//     if (sortBy.createdAt !== undefined) gSortBy.createdAt = sortBy.createdAt
-//     return gSortBy
-// }
-
-// function getNextCarId(carId) {
-// 	return storageService.query(CAR_KEY).then(cars => {
-// 		var idx = cars.findIndex(car => car.id === carId)
-// 		if (idx === cars.length - 1) idx = -1
-// 		return cars[idx + 1].id
-// 	})
-// }
-
-// function getCarCountBySpeedMap() {
-// 	return storageService.query(CAR_KEY).then(cars => {
-// 		const carCountBySpeedMap = cars.reduce(
-// 			(map, car) => {
-// 				if (car.maxSpeed < 120) map.slow++
-// 				else if (car.maxSpeed < 200) map.normal++
-// 				else map.fast++
-// 				return map
-// 			},
-// 			{slow: 0, normal: 0, fast: 0}
-// 		)
-// 		return carCountBySpeedMap
-// 	})
-// }
-
 function getEmptyNote() {
     return {
         id: '',
@@ -144,13 +115,6 @@ function _createNotes() {
     let notes = utilService.loadFromStorage(NOTE_KEY)
     if (!notes || !notes.length) {
         notes = []
-        notes.push(_createNote({
-            type: 'NoteTxt',
-            info: 'Fullstack Me Baby!',
-            title: 'My First Note',
-            isPinned: false,
-            style: {backgroundColor: '#FFFFFF'}
-        }))
         notes.push(_createNote({
             type: 'NoteTxt',
             info: 'Meeting with John on Friday',
