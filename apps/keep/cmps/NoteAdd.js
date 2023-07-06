@@ -21,7 +21,9 @@ export default {
                 title: '',
                 info: {
                     txt: ''
-                }
+                },
+                style: {backgroundColor: '#FFFFFF'}
+
             }
         }
     },
@@ -34,7 +36,9 @@ export default {
                 title: '',
                 info: {
                     txt: ''
-                }
+                },
+                style: {backgroundColor: '#FFFFFF'}
+
             }
         },
         expandForm() {
