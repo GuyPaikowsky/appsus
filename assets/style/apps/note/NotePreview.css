@@ -1,0 +1,35 @@
+.note-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /*gap: 0.5em;*/
+    /*margin-left: 10%;*/
+    /*max-width: 80%;*/
+}
+
+.note-preview {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 14.375em; /* approx. 230px */
+    max-height: 21.875em; /* approx. 350px */
+    border: 1px solid #e0e0e0;
+    padding: 0.5em;
+    margin: 0.5em;
+    box-sizing: border-box;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    border-radius: 8px;
+}
+
+.note-preview:hover {
+    box-shadow: 0 3px 5px rgba(0, 0, 0, 0.37);
+    border-color: #000;
+}
+
+.note-actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}

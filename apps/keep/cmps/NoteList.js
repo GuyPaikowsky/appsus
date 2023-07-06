@@ -4,14 +4,14 @@ export default {
 	props: ['notes'],
 	template: `
       <section class="note-list">
-      <TransitionGroup name="list" tag="ul">
-        <li v-for="note in notes" :key="note.id">
-          <NotePreview :note="note" @update="onUpdateNote"/>
-          <section class="actions">
-            <span class="material-symbols-outlined" @click="onRemoveNote(note.id)">delete</span>
-          </section>
-        </li>
-      </TransitionGroup>
+	  <TransitionGroup name="list">
+		  <div v-for="note in notes" :key="note.id">
+			  <NotePreview :note="note" 
+						   @update="onUpdateNote"
+						   @remove="onRemoveNote"/>
+		  </div>
+	  </TransitionGroup>
+
       </section>
 	`,
 	methods: {
