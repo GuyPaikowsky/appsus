@@ -1,21 +1,13 @@
 import {noteService} from '../services/note.service.js'
 import NoteFilter from '../cmps/NoteFilter.js'
+import NoteAdd from "../cmps/NoteAdd.js";
 import NoteList from '../cmps/NoteList.js'
 
 export default {
 	template: `
       <section class="note-index">
-      <div class="note-form">
-        <form @submit.prevent="addNote">
-          <input v-model="newNote.title" placeholder="Title...">
-          <div>
-            <textarea v-model="newNote.info.txt" placeholder="Note..." required></textarea>
-          </div>
-          <button type="submit">Add Note</button>
-        </form>
-      </div>
-
-      <NoteFilter @filter="setFilterBy"/>
+	  <NoteFilter @filter="setFilterBy"/>
+	  <NoteAdd @add="addNote"/>
       <NoteList
           v-if="notes"
           :notes="sortedNotes"
@@ -25,6 +17,7 @@ export default {
 	`,
 	data() {
 		return {
+			showTitle: false,
 			notes: [],
 			filterBy: null,
 			newNote: {
@@ -92,6 +85,7 @@ export default {
 	},
 	components: {
 		NoteList,
-		NoteFilter
+		NoteFilter,
+		NoteAdd
 	}
 }
