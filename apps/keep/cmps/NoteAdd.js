@@ -1,4 +1,3 @@
-import { noteService } from '../services/note.service.js'
 
 export default {
     template: `
@@ -11,13 +10,14 @@ export default {
             <div v-if="showTitle" class="btn-container">
             </div>
         </form>
-        <button type="submit" @click="addNote">Add Note</button>
+        <button @click="addNote">Add Note</button>
 
     </div>`,
     data() {
         return {
             showTitle: false,
             newNote: {
+                type: 'NoteTxt',
                 title: '',
                 info: {
                     txt: ''
@@ -33,12 +33,13 @@ export default {
             this.$emit('add', this.newNote)
             this.showTitle = false
             this.newNote = {
+                type: 'NoteTxt',
                 title: '',
                 info: {
                     txt: ''
                 },
+                isPinned: false,
                 style: {backgroundColor: '#FFFFFF'}
-
             }
         },
         expandForm() {

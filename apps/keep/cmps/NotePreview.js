@@ -26,6 +26,9 @@ export default {
       </article>
 
     `,
+    created() {
+        console.log(this.note.type)
+    },
     data() {
         return {
             showColorPicker: false
