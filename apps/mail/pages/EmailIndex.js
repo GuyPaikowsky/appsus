@@ -23,7 +23,7 @@ export default {
                 <!-- FILTER NAV -->
                 <nav class="label-container">
                     <ul class="clean-list label-container">
-                        <li><a href="#">Inbox</a></li>
+                    <li><RouterLink to="/email">Inbox</RouterLink></li>
                         <li><a href="#">Starred</a></li>
                         <li><a href="#">Important</a></li>
                         <li><a href="#">Sent</a></li>

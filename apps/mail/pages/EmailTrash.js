@@ -4,9 +4,9 @@ import { emailService } from '../services/email.service.js';
 export default {
     props: ['emails'],
     template: `
-        <section v-if="emails" class="email-list">
+        <section v-if="trashEmails" class="email-list">
             <ul class="clean-list">
-                <li v-for="email in emails" :key="email.id">
+                <li v-for="email in trashEmails" :key="email.id">
                     <EmailPreview :email="email"/>
                     <section>
                         <button @click="onRemoveEmail(email.id)">x</button>
@@ -19,6 +19,7 @@ export default {
     `,
     data() {
         return {
+            trashEmails: null,
             filterBy: { showTrash: true }
         }
     },
@@ -29,7 +30,7 @@ export default {
     },
     methods: {
         getEmails() {
-            emailService.query().then(emails => (this.emails = emails))
+            emailService.query().then(emails => (this.trashEmails = emails))
             console.log('trash', this.emails);
         },
         onRemoveEmail(emailId) {
