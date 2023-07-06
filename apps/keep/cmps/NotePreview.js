@@ -1,5 +1,4 @@
-import NoteColorPicker from "./NoteColorPicker.js";
-
+import NoteColorPicker from "./NoteColorPicker.js"
 export default {
     props: ['note'],
 

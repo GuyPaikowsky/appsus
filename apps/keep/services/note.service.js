@@ -96,7 +96,6 @@ function setFilterBy(filterBy = {}) {
     return gFilterBy
 }
 
-// TODO: remove all commented-out material...
 function getEmptyNote() {
     return {
         id: '',
@@ -110,7 +109,7 @@ function getEmptyNote() {
     }
 }
 
-// TODO: Add more notes
+// TODO: Add more note types...
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTE_KEY)
     if (!notes || !notes.length) {
