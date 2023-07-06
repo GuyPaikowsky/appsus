@@ -51,10 +51,6 @@ const routerOptions = {
 				}
 			]
 		},
-		// {
-		// 	path: '/email/:emailId',
-		// 	component: EmailDetails,
-		// },
 	],
 }
 export const router = createRouter(routerOptions)

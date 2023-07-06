@@ -47,7 +47,7 @@ function query() {
             emails = emails.filter(email => {
                 // enabaling to, from, title and txt searching
                 for (const key of keys) {
-                    if (regex.text(email[key])) return true
+                    if (regex.test(email[key])) return true
                 }
                 return false
             })
@@ -89,6 +89,7 @@ function setFilterBy(filterBy = {}) {
     if (filterBy.showDraft !== undefined) gFilterBy.showDraft = filterBy.showDraft
     if (filterBy.showSent !== undefined) gFilterBy.showSent = filterBy.showSent
     if (filterBy.txt !== undefined) gFilterBy.txt = filterBy.txt
+    console.log(gFilterBy);
 }
 
 function getNextEmailId(emailId) {

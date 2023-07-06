@@ -1,10 +1,16 @@
 export default {
 	props: ['email'],
 	template: `
-      <article class="email-preview">
-      	<h2>{{ email.title }}</h2>
-      	<p>{{ email.txt }}</p>
-		<RouterView :to="'/email/' + email.id">Read more</RouterView> 
-      </article>
-	`
+		<RouterLink :to="'/email/' + id">
+			<article class="email-preview">
+				<h2>{{ email.title }}</h2>
+				<p>{{ email.txt }}</p>
+			</article>
+		</RouterLink>
+	`,
+	data() {
+		return {
+			id: this.email.id
+		}
+	}
 }

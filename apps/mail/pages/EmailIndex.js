@@ -28,7 +28,7 @@ export default {
                         <li><a href="#">Important</a></li>
                         <li><a href="#">Sent</a></li>
                         <li><a href="#">Draft</a></li>
-                        <li><RouterView @click="onTrashView()">Trash</RouterView></li>
+                        <li><a @click="onTrashView()" href="#">Trash</a></li>
                     </ul>
                 </nav>
 
@@ -41,13 +41,21 @@ export default {
     data() {
         return {
             emails: [],
-            searchTxt: ''
+
+            searchTxt: '',
+            // showDraft: null,
+            // showTrash: null,
+            // showUnread: null,
+            // showSent: null,
         }
     },
     created() {
-        emailService.query().then(emails => (this.emails = emails))
+        this.getEmails()
     },
     methods: {
+        getEmails() {
+            emailService.query().then(emails => (this.emails = emails))
+        },
         removeEmail(emailId) {
             emailService.remove(emailId).then(() => {
                 const idx = this.emails.findIndex(email => email.id === emailId)
@@ -57,7 +65,7 @@ export default {
             .catch(err => showErrorMsg('Was unable to delete email'))
         },
         onTrashView() {
-
+            console.log('youre trash!!');
         },
     },
     computed: {
@@ -65,5 +73,14 @@ export default {
     },
     components: {
         EmailList,
+    },
+    watch: {
+        searchTxt: {
+            handler() {
+                const filterBy = { txt: this.searchTxt }
+                emailService.setFilterBy(filterBy)
+                this.getEmails()
+            }
+        }
     }
 }
