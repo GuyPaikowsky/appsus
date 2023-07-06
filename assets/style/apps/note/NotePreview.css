@@ -1,16 +1,18 @@
 .note-list {
     display: flex;
     flex-wrap: wrap;
-    justify-content: flex-start;
+    justify-content: center;
     /*gap: 0.5em;*/
-    margin-left: 10%;
-    max-width: 80%;
+    /*margin-left: 10%;*/
+    /*max-width: 80%;*/
 }
 
 .note-preview {
+    user-select: none;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: flex-start;
     width: 14.375em; /* approx. 230px */
     max-height: 21.875em; /* approx. 350px */
     border: 1px solid #e0e0e0;

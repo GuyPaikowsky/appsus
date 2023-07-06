@@ -47,8 +47,8 @@ export default {
 			.then(notes => this.notes = notes)
 	},
 	methods: {
-		addNote() {
-			noteService.save(this.newNote)
+		addNote(newNote) {
+			noteService.save(newNote)
 				.then(note => {
 					this.notes.unshift(note)
 					this.newNote = {title: '', info: {txt: ''}, isPinned: false} // Reset form

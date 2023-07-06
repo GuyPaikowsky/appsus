@@ -11,28 +11,29 @@ export default {
             <div v-if="showTitle" class="btn-container">
             </div>
         </form>
-        <button type="submit">Add Note</button>
+        <button type="submit" @click="addNote">Add Note</button>
 
     </div>`,
     data() {
         return {
             showTitle: false,
             newNote: {
-                title: "",
+                title: '',
                 info: {
-                    txt: ""
+                    txt: ''
                 }
             }
         }
     },
     methods: {
         addNote() {
+            console.log('Adding note:', this.newNote);
             this.$emit('add', this.newNote)
             this.showTitle = false
             this.newNote = {
-                title: "",
+                title: '',
                 info: {
-                    txt: ""
+                    txt: ''
                 }
             }
         },
