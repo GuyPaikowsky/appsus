@@ -4,7 +4,7 @@
     "title": "Upcoming Webinar: Boost Your Productivity",
     "txt": "Dear Subscriber, We are excited to announce an upcoming webinar on productivity hacks. Join us on July 15th at 10 AM EST to learn practical tips and techniques to enhance your efficiency and accomplish more in less time. Our expert speakers will share their insights and strategies to help you optimize your workflow. Don't miss this opportunity to gain valuable knowledge and take your productivity to the next level. Reserve your spot today!",
     "isRead": true,
-    "isTrash": false,
+    "isTrash": true,
     "isDraft": false,
     "isSent": false,
     "to": "user@appsus.com",

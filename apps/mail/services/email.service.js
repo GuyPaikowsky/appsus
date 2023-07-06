@@ -41,6 +41,9 @@ function query() {
         if (gFilterBy.showTrash) {
             emails = emails.filter(email => email.isTrash)
         }
+        else {
+            emails = emails.filter(email => !email.isTrash)
+        }
 
         if (gFilterBy.txt) {
             const regex = new RegExp(gFilterBy.txt, 'i')
@@ -89,7 +92,7 @@ function setFilterBy(filterBy = {}) {
     if (filterBy.showDraft !== undefined) gFilterBy.showDraft = filterBy.showDraft
     if (filterBy.showSent !== undefined) gFilterBy.showSent = filterBy.showSent
     if (filterBy.txt !== undefined) gFilterBy.txt = filterBy.txt
-    console.log(gFilterBy);
+    console.log('setfilter', gFilterBy);
 }
 
 function getNextEmailId(emailId) {

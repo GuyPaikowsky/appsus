@@ -28,7 +28,8 @@ export default {
                         <li><a href="#">Important</a></li>
                         <li><a href="#">Sent</a></li>
                         <li><a href="#">Draft</a></li>
-                        <li><a @click="onTrashView()" href="#">Trash</a></li>
+                        <li><a href="#">Draft</a></li>
+                        <li><RouterLink to="/email/trash">Trash</RouterLink></li>
                     </ul>
                 </nav>
 
