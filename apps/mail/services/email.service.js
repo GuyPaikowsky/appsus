@@ -1,9 +1,10 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
 import emailList from '../../../assets/data/emails.json' assert { type: 'json' }
+
 const EMAIL_KEY = 'emailDB'
 
-var gFilterBy = { isRead: null}
+var gFilterBy = { showUnread: false, showTrash: false, showDraft: false, showSent: false, txt: '', }
 // var gMailSortBy = { txt: '' }
 // var gMailPageIdx
 
@@ -21,7 +22,40 @@ export const emailService = {
 }
 
 function query() {
-    return storageService.query(EMAIL_KEY).then(emails => emails)
+    return storageService.query(EMAIL_KEY).then(emails => {
+
+        const keys = Object.keys(emails[0])
+
+        if (gFilterBy.showUnread) {
+            emails = emails.filter(email => !email.isRead)
+        }
+
+        if (gFilterBy.showDraft) {
+            emails = emails.filter(email => email.isDraft)
+        }
+
+        if (gFilterBy.showSent) {
+            emails = emails.filter(email => email.isSent)
+        }
+
+        if (gFilterBy.showTrash) {
+            emails = emails.filter(email => email.isTrash)
+        }
+
+        if (gFilterBy.txt) {
+            const regex = new RegExp(gFilterBy.txt, 'i')
+            emails = emails.filter(email => {
+                // enabaling to, from, title and txt searching
+                for (const key of keys) {
+                    if (regex.text(email[key])) return true
+                }
+                return false
+            })
+        }
+
+        console.log(emails);
+        return emails
+    })
 }
 
 function get(emailId) {
@@ -50,7 +84,11 @@ function getFilterBy() {
 }
 
 function setFilterBy(filterBy = {}) {
-    if (filterBy.isRead !== undefined) gFilterBy.isRead = filterBy.isRead
+    if (filterBy.showUnread !== undefined) gFilterBy.showUnread = filterBy.showUnread
+    if (filterBy.showTrash !== undefined) gFilterBy.showTrash = filterBy.showTrash
+    if (filterBy.showDraft !== undefined) gFilterBy.showDraft = filterBy.showDraft
+    if (filterBy.showSent !== undefined) gFilterBy.showSent = filterBy.showSent
+    if (filterBy.txt !== undefined) gFilterBy.txt = filterBy.txt
 }
 
 function getNextEmailId(emailId) {

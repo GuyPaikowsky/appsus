@@ -17,7 +17,7 @@ export default {
                 <fieldset class="search-bar flex justify-center">
                     <legend>search icon</legend>
                     <!-- TODO -->
-                    <input v-model="txt" placeholder="Search mail" />
+                    <input v-model="searchTxt" type="text" placeholder="Search mail" />
                 </fieldset>
 
                 <!-- FILTER NAV -->
@@ -28,20 +28,20 @@ export default {
                         <li><a href="#">Important</a></li>
                         <li><a href="#">Sent</a></li>
                         <li><a href="#">Draft</a></li>
-                        <li><a href="#">Trash</a></li>
+                        <li><RouterView @click="onTrashView()">Trash</RouterView></li>
                     </ul>
                 </nav>
 
                 <!-- EMAILS - MAIN -->
-                <RouterView class="email-container">
-                    <EmailList :emails="emails"
-                    @remove="removeEmail"/>
-                </RouterView>
+                <section class="email-container">
+                    <RouterView :emails="emails" @remove="removeEmail"/>
+                </section>
             </RouterLink>
     `,
     data() {
         return {
-            emails: []
+            emails: [],
+            searchTxt: ''
         }
     },
     created() {
@@ -55,7 +55,10 @@ export default {
                 showSuccessMsg('Email deleted')
             })
             .catch(err => showErrorMsg('Was unable to delete email'))
-        }
+        },
+        onTrashView() {
+
+        },
     },
     computed: {
 

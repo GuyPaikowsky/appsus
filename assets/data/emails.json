@@ -108,5 +108,60 @@
     "isSent": false,
     "to": "user@appsus.com",
     "from": "newsletter@example.com"
+  },
+  {
+    "id": "aBc12",
+    "title": "The Whispering Shadows",
+    "txt": "Dear [Name], I am writing to share with you a terrifying encounter that I recently experienced. While exploring an ancient cemetery at dusk, I stumbled upon a hidden mausoleum. As I approached, a chilling wind whispered through the air, and the shadows began to writhe and twist. I heard whispers from beyond, whispering secrets of forbidden knowledge and otherworldly beings. The experience was both mesmerizing and horrifying. I cannot shake the feeling that something otherworldly is watching me. Be cautious and avoid the cemetery at night. Yours in fear, [Your Name]",
+    "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": true,
+    "to": "recipient@example.com",
+    "from": "user@appsus.com"
+  },
+  {
+    "id": "XyZ34",
+    "title": "The Haunting at Redwood Mansion",
+    "txt": "Dear [Name], I write to you with a tale of unspeakable terror that unfolded at Redwood Mansion. It began innocently enough, with strange noises and apparitions that haunted the halls at night. But as time went on, the malevolent presence grew stronger, driving the inhabitants to madness. The walls bled, the portraits whispered, and unseen hands reached out from the darkness. It is a place of pure evil, and its secrets must remain buried. Beware, and do not venture near Redwood Mansion, for its horrors will consume your very soul. Sincerely, [Your Name]",
+    "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": true,
+    "to": "recipient@example.com",
+    "from": "user@appsus.com"
+  },
+  {
+    "id": "PqR56",
+    "title": "The Call from the Abyss",
+    "txt": "Dear [Name], I hope this email finds you well, for I bring disturbing tidings. In the dead of night, I received a call from a mysterious number. The voice on the other end was unearthly, filled with an ancient knowledge that chilled my very soul. It spoke of forgotten gods, eldritch realms, and the imminent doom that awaits us all. Since that dreadful call, I have been plagued by visions and nightmares, unable to escape the encroaching madness. Heed my warning: should you ever receive a call from the abyss, resist the temptation to answer. Stay safe, [Your Name]",
+    "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": true,
+    "to": "recipient@example.com",
+    "from": "user@appsus.com"
+  },
+  {
+    "id": "zYx98",
+    "title": "The Cursed Relic",
+    "txt": "Dear [Name], I write to you with a tale of a cursed relic that brought untold horrors upon its possessors. Legends spoke of its dark power, an object forged in the depths of cosmic chaos. As its influence grew, madness consumed those who dared possess it. Shadows whispered of ancient terrors and sanity slipped away with each passing day. The cursed relic must be sealed away forever, banished from this world before it unleashes its full wrath. I implore you, do not seek it out, for its curse is a burden that no mortal can bear. Stay vigilant, [Your Name]",
+   "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": true,
+    "to": "recipient@example.com",
+    "from": "user@appsus.com"
+  },
+  {
+    "id": "mNo67",
+    "title": "The Whispers in the Void",
+    "txt": "Dear [Name], I write to you with a tale of the cosmic horrors that lurk beyond the veil of reality. In the dead of night, as I gazed at the starry abyss, whispers from the void reached my ears. They spoke of ancient beings, awakening from eons of slumber, hungry for the souls of mortals. Madness threatened to consume my mind as I tried to comprehend the incomprehensible. I warn you, beware the whispers in the void, for they bring with them unimaginable terror. May your sanity endure, [Your Name]",
+    "isRead": false,
+    "isTrash": false,
+    "isDraft": true,
+    "isSent": false,
+    "to": "recipient@example.com",
+    "from": "user@appsus.com"
   }
 ]

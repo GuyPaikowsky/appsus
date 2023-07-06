@@ -3,7 +3,7 @@ import { showErrorMsg, showSuccessMsg } from "../../../services/event-bus.servic
 
 export default {
     template: `
-        <section class="email-details">
+        <section v-if="email" class="email-details">
             <h1>{{ email.title }}</h1>
             <p>{{ email.txt }}</p>
             <section class="actions">
