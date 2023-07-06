@@ -1,26 +1,23 @@
 .note-list {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /*gap: 0.5em;*/
-    /*margin-left: 10%;*/
-    /*max-width: 80%;*/
+    column-count: 4;  /* Adjust this to suit your design */
+    column-width: 200px;
+    column-gap: 0.5em;
+    margin-inline-start: 2em;
+    margin-inline-end: 2em;
 }
 
 .note-preview {
     user-select: none;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
-    width: 14.375em; /* approx. 230px */
-    max-height: 21.875em; /* approx. 350px */
-    border: 1px solid #e0e0e0;
-    padding: 0.5em;
-    margin: 0.5em;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 0.5em;
+    break-inside: avoid;
     box-sizing: border-box;
-    transition: box-shadow 0.3s ease, border-color 0.3s ease;
+    max-height: 21.875em;
+    padding: 0.5em;
+    border: 1px solid #e0e0e0;
     border-radius: 8px;
+    transition: box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .note-preview:hover {
@@ -28,8 +25,14 @@
     border-color: #000;
 }
 
-.note-actions {
+.note-preview .note-actions {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     align-items: center;
+    opacity: 0;
+    transition: 0.3s ease;
+}
+
+.note-preview:hover .note-actions {
+    opacity: 1;
 }

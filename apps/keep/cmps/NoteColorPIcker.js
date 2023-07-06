@@ -9,7 +9,7 @@ export default {
             :key="color"
             class="color-option"
             :style="{ backgroundColor: color }"
-            @click="chooseColor(color)" >
+            @click="chooseColor(color)">
         </div>
       </div>
       </div>
@@ -25,5 +25,5 @@ export default {
             this.chosenColor = color;
             this.$emit('color-chosen', color);
         }
-    },
+    }
 }
