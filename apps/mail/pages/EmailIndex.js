@@ -1,4 +1,4 @@
-import { emailService } from "../services/mail.service.js"
+import { emailService } from "../services/email.service.js"
 import { showSuccessMsg, showErrorMsg } from '../../../services/event-bus.service.js'
 
 import EmailList from '../cmps/EmailList.js'
@@ -22,7 +22,7 @@ export default {
 
                 <!-- FILTER NAV -->
                 <nav class="label-container">
-                    <ul class="clean-list">
+                    <ul class="clean-list label-container">
                         <li><a href="#">Inbox</a></li>
                         <li><a href="#">Starred</a></li>
                         <li><a href="#">Important</a></li>
@@ -33,10 +33,10 @@ export default {
                 </nav>
 
                 <!-- EMAILS - MAIN -->
-                <section class="email-container">
+                <RouterView class="email-container">
                     <EmailList :emails="emails"
                     @remove="removeEmail"/>
-                </section>
+                </RouterView>
             </RouterLink>
     `,
     data() {

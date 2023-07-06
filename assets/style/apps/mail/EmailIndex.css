@@ -21,8 +21,30 @@
     grid-area: emails;
 }
 
-.label-container {
+nav.label-container {
     grid-area: labels;
+    padding: 1rem;
+}
+
+ul.label-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill ,1fr);
+    justify-items: start;
+    gap: .5rem;
+}
+
+.label-container:hover {
+    cursor: default;
+}
+
+ul.label-container > *:hover {
+    cursor: pointer;
+}
+
+ul.label-container > * {
+    height: 2rem;
+    width: 100%;
 }
 
 fieldset {

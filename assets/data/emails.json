@@ -4,6 +4,10 @@
     "title": "Upcoming Webinar: Boost Your Productivity",
     "txt": "Dear Subscriber, We are excited to announce an upcoming webinar on productivity hacks. Join us on July 15th at 10 AM EST to learn practical tips and techniques to enhance your efficiency and accomplish more in less time. Our expert speakers will share their insights and strategies to help you optimize your workflow. Don't miss this opportunity to gain valuable knowledge and take your productivity to the next level. Reserve your spot today!",
     "isRead": true,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "events@example.com"
   },
   {
@@ -11,6 +15,10 @@
     "title": "Exclusive Summer Sale: Up to 50% Off",
     "txt": "Dear Valued Customer, Summer is here, and we are delighted to offer you exclusive access to our annual summer sale. Discover a wide range of products with discounts of up to 50% off. From trendy fashion items to must-have gadgets, we have something for everyone. Don't miss out on this opportunity to grab your favorite items at unbeatable prices. Visit our website or head to our nearest store to start shopping. Hurry, as the sale ends on August 31st. Happy shopping!",
     "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "sales@example.com"
   },
   {
@@ -18,6 +26,10 @@
     "title": "Important Account Security Update",
     "txt": "Dear User, At XYZ Company, we prioritize the security and privacy of our customers. As part of our ongoing efforts to enhance account security, we have implemented a new two-factor authentication (2FA) system. Starting from next week, you will be required to enable 2FA to access your account. This additional layer of security adds an extra level of protection and ensures that only authorized individuals can access your account. To set up 2FA, please follow the instructions provided in the attached document. Thank you for your cooperation in keeping your account secure.",
     "isRead": true,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "security@example.com"
   },
   {
@@ -25,6 +37,10 @@
     "title": "Invitation to our Annual Charity Gala",
     "txt": "Dear Friend, We are delighted to invite you to our annual charity gala event. Join us on September 5th at 7 PM at the Grand Ballroom for an elegant evening filled with entertainment, delicious food, and the opportunity to make a positive impact in our community. This year, our gala will support local education initiatives aimed at empowering underprivileged students. Your presence and contributions will play a significant role in helping us make a difference. Please RSVP by August 25th to confirm your attendance. We look forward to having you join us for this special occasion.",
     "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "charity@example.com"
   },
   {
@@ -32,6 +48,10 @@
     "title": "Important Tax Filing Reminder",
     "txt": "Dear Customer, Tax season is approaching, and we want to remind you about the upcoming filing deadline. The deadline for filing your income tax return is September 30th. Ensure that you gather all the necessary documents, including income statements, receipts, and other relevant records. If you need assistance or have any questions regarding your taxes, our team of tax experts is available to help you navigate the process. Don't delay your tax filing and avoid penalties or unnecessary stress. Act now to fulfill your tax obligations. Thank you for choosing our services.",
     "isRead": true,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "taxes@example.com"
   },
   {
@@ -39,6 +59,10 @@
     "title": "Your Order Confirmation",
     "txt": "Dear Customer, Thank you for your recent purchase from our online store. We are pleased to inform you that your order has been successfully processed and is now being prepared for shipment. Order Details: - Order ID: 12345678 - Date: July 10, 2023 - Items: 1 x Product A, 2 x Product B, 1 x Product C - Total Amount: $199.99 We will notify you once your order has been shipped, along with the tracking details. If you have any questions or concerns, please don't hesitate to contact our customer support. Thank you for choosing our products!",
     "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "orders@example.com"
   },
   {
@@ -46,6 +70,10 @@
     "title": "Important Notice: Scheduled Maintenance",
     "txt": "Dear User, We would like to inform you about the upcoming scheduled maintenance on our website and services. Maintenance Window: - Start Date: August 15, 2023 - Start Time: 10:00 PM (GMT) - End Date: August 16, 2023 - End Time: 02:00 AM (GMT) During this maintenance period, access to our website and certain services may be temporarily unavailable. We apologize for any inconvenience caused. We strive to continuously improve our services and ensure a smooth user experience. If you have any urgent matters or need assistance, please reach out to our support team. Thank you for your understanding.",
     "isRead": true,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "maintenance@example.com"
   },
   {
@@ -53,6 +81,10 @@
     "title": "Invitation: Networking Event for Professionals",
     "txt": "Dear [Name], You are cordially invited to our upcoming networking event for professionals in the industry. This event will provide a great opportunity for you to connect with like-minded individuals, share insights, and explore potential collaborations. Date: September 20, 2023 Time: 6:00 PM Venue: [Venue Name] Dress Code: Business Attire Please RSVP by September 10th to secure your spot. We look forward to your presence and the opportunity to build meaningful professional relationships. Feel free to bring along your business cards to exchange contacts. Should you have any questions, please don't hesitate to contact us. See you at the event!",
     "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "events@example.com"
   },
   {
@@ -60,6 +92,10 @@
     "title": "Action Required: Verify Your Account",
     "txt": "Dear User, In order to ensure the security of your account, we require you to verify your account details. Please follow the link below to complete the account verification process: [Verification Link] By verifying your account, you will help us in maintaining the integrity and security of our platform. Should you have any questions or concerns, please contact our support team. Thank you for your cooperation.",
     "isRead": true,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "verification@example.com"
   },
   {
@@ -67,6 +103,10 @@
     "title": "Welcome to Our Newsletter!",
     "txt": "Dear Subscriber, Welcome to our monthly newsletter! We are excited to have you on board. As a subscriber, you will receive updates, news, and exclusive offers straight to your inbox. Stay informed about our latest products, upcoming events, and valuable resources. We respect your privacy and promise not to spam your inbox. If you ever wish to unsubscribe, you can do so by clicking the 'unsubscribe' link at the bottom of our newsletters. Once again, thank you for subscribing, and we look forward to keeping you informed and engaged. Best regards, The Newsletter Team",
     "isRead": false,
+    "isTrash": false,
+    "isDraft": false,
+    "isSent": false,
+    "to": "user@appsus.com",
     "from": "newsletter@example.com"
   }
 ]
