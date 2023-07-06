@@ -1,0 +1,37 @@
+.color-picker-container {
+    padding: 0.5em;
+    position: absolute;
+    bottom: -2rem;
+    /*left: 0;*/
+    z-index: 10;
+    border: 1px solid black;
+    border-radius: 20px;
+    background-color: white;
+}
+
+.color-picker {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.color-preview,
+.color-option {
+    width: 1em;
+    height: 1em;
+    border: 1px solid black;
+    border-radius: 50%;
+}
+
+.color-option:hover {
+    border: 2px solid black;
+}
+
+.color-options {
+    display: flex;
+    gap: 0.3rem;
+}
+
+.note-actions {
+    position: relative;
+}

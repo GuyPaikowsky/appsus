@@ -38,7 +38,6 @@ function query() {
 			notes = notes.filter(note => note.type === gFilterBy.type)
 		}
 
-		// Sorting by isPinned first and then by creation date.
 		notes.sort((n1, n2) => {
 			if (n1.isPinned && !n2.isPinned) {
 				return -1
@@ -132,7 +131,7 @@ function getEmptyNote() {
 		isPinned: false,
 		info: {},
 		title: '',
-		style: {},
+		style: {backgroundColor: '#FFFFFF'},
 		createdAt: Date.now()
 
 	}
@@ -148,49 +147,49 @@ function _createNotes() {
 			info: 'Fullstack Me Baby!',
 			title: 'My First Note',
 			isPinned: false,
-			style: {backgroundColor: '#00d'}
+			style: {backgroundColor: '#FFFFFF'}
 		}))
 		notes.push(_createNote({
 			type: 'NoteTxt',
 			info: 'Meeting with John on Friday',
 			title: 'Meeting',
 			isPinned: false,
-			style: {backgroundColor: '#90caf9'}
+			style: {backgroundColor: '#FFFFFF'}
 		}))
 		notes.push(_createNote({
 			type: 'NoteTxt',
 			info: 'Who am I? I dont know',
 			title: 'Reading',
 			isPinned: true,
-			style: {backgroundColor: '#a5d6a7'}
+			style: {backgroundColor: '#FFFFFF'}
 		}))
 		notes.push(_createNote({
 			type: 'NoteTxt',
 			info: 'Pick up laundry ',
 			title: 'Chores',
 			isPinned: false,
-			style: {backgroundColor: '#f48fb1'}
+			style: {backgroundColor: '#FFFFFF'}
 		}))
 		notes.push(_createNote({
 			type: 'NoteTxt',
 			info: 'Plan 30 minute vacation on friday',
 			title: 'Coding Academy',
 			isPinned: true,
-			style: {backgroundColor: '#ce93d8'}
+			style: {backgroundColor: '#FFFFFF'}
 		}))
 		notes.push(_createNote({
 			type: 'NoteTxt',
 			info: 'Learn to cook ptitim',
 			title: '',
 			isPinned: false,
-			style: {backgroundColor: '#80deea'}
+			style: {backgroundColor: '#FFFFFF'}
 		}))
 		notes.push(_createNote({
 			type: 'NoteTxt',
 			info: 'Take care of my fleas',
 			title: 'Health Concerns',
 			isPinned: true,
-			style: {backgroundColor: '#ffab91'}
+			style: {backgroundColor: '#FFFFFF'}
 		}))
 		utilService.saveToStorage(NOTE_KEY, notes)
 	}

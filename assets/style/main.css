@@ -21,3 +21,7 @@
 /* Note App Components */
 @import 'apps/note/NoteAdd.css';
 @import 'apps/note/NotePreview.css';
+@import 'apps/note/NoteColorPicker.css';
+
+/* Google Material Icons CDN */
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200');
