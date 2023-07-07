@@ -1,4 +1,6 @@
 import NoteColorPicker from "./NoteColorPicker.js"
+import NoteReadMore from "./NoteReadMore.js"
+
 export default {
     props: ['note'],
 
@@ -7,10 +9,10 @@ export default {
       <RouterLink :to="'/note/' + note.id">
         <div class="note-content">
           <h3>{{ note.title }}</h3>
-          <p v-if="note.type === 'NoteTxt'">{{ note.info.txt }}</p>
+          <NoteReadMore v-if="note.type === 'NoteTxt'" :txt="note.info.txt" :length="100" />
           <div v-else-if="note.type === 'NoteImg'">
             <img :src="note.info.url" alt="note.title" class="note-image">
-            <p v-if="note.info.txt">{{ note.info.txt }}</p>
+            <NoteReadMore v-if="note.info.txt" :txt="note.info.txt" :length="100" />
           </div>
         </div>
       </RouterLink>
@@ -51,6 +53,7 @@ export default {
         }
     },
     components: {
-        NoteColorPicker
+        NoteColorPicker,
+        NoteReadMore
     }
 }
