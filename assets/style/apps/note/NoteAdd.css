@@ -34,3 +34,38 @@
     /*font-family: Roboto, sans-serif;*/
     /*font-size: 1rem;*/
 }
+
+.todos-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-line {
+    display: flex;
+    align-items: center;
+    /*margin-bottom: -0.7em;*/
+}
+
+/*TODO: decide on components*/
+
+.task-line.task-line-add {
+    margin-bottom: -0.7em;
+}
+
+
+.task-checkbox {
+    cursor: pointer;
+    margin-right: 0.333em;
+    margin-left: 0.1875em;
+}
+
+.task-input {
+    flex-grow: 1;
+    margin-right: 10px;
+}
+
+.todo-completed {
+    text-decoration: line-through;
+    color: #757575;
+}
