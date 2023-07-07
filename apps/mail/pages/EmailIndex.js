@@ -1,6 +1,7 @@
 import { emailService } from "../services/email.service.js"
 import { showSuccessMsg, showErrorMsg } from '../../../services/event-bus.service.js'
 
+import EmailFilter from "../cmps/EmailFilter.js"
 import EmailList from '../cmps/EmailList.js'
 
 export default {
@@ -21,17 +22,9 @@ export default {
                 </fieldset>
 
                 <!-- FILTER NAV -->
-                <nav class="label-container">
-                    <ul class="clean-list label-container">
-                    <li><RouterLink to="/email">Inbox</RouterLink></li>
-                        <li><a href="#">Starred</a></li>
-                        <li><a href="#">Important</a></li>
-                        <li><a href="#">Sent</a></li>
-                        <li><a href="#">Draft</a></li>
-                        <li><a href="#">Draft</a></li>
-                        <li><RouterLink to="/email/trash">Trash</RouterLink></li>
-                    </ul>
-                </nav>
+                <!-- <EmailFilter class="label-container"/>  -->
+                <EmailFilter class="label-container"
+                    @filter="setFilterBy"/>
 
                 <!-- EMAILS - MAIN -->
                 <section class="email-container">
@@ -42,12 +35,8 @@ export default {
     data() {
         return {
             emails: [],
-
-            searchTxt: '',
-            // showDraft: null,
-            // showTrash: null,
-            // showUnread: null,
-            // showSent: null,
+            searchTxt: null,
+            filterBy: null,
         }
     },
     created() {
@@ -65,8 +54,15 @@ export default {
             })
             .catch(err => showErrorMsg('Was unable to delete email'))
         },
-        onTrashView() {
-            console.log('youre trash!!');
+        // onTrashView() {
+        //     console.log('youre trash!!');
+        // },
+        setFilterBy(filterBy) {
+            console.log('EmailIndex - filterBy is:', filterBy);
+            this.filterBy = filterBy
+            console.log('BEFORE CALLING SERVICE THIS.FILTERBY:', this.filterBy);
+            emailService.setFilterBy(this.filterBy)
+            this.getEmails()
         },
     },
     computed: {
@@ -74,14 +70,15 @@ export default {
     },
     components: {
         EmailList,
+        EmailFilter,
     },
-    watch: {
-        searchTxt: {
-            handler() {
-                const filterBy = { txt: this.searchTxt }
-                emailService.setFilterBy(filterBy)
-                this.getEmails()
-            }
-        }
-    }
+    // watch: {
+    //     filterBy: {
+    //         handler() {
+                
+    //             emailService.setFilterBy(this.filterBy)
+    //             this.getEmails()
+    //         }
+    //     }
+    // }
 }

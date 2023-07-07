@@ -4,7 +4,7 @@ import emailList from '../../../assets/data/emails.json' assert { type: 'json' }
 
 const EMAIL_KEY = 'emailDB'
 
-var gFilterBy = { showUnread: false, showTrash: false, showDraft: false, showSent: false, txt: '', }
+var gFilterBy = { showInbox: true, showUnread: false, showTrash: false, showDraft: false, showSent: false, txt: '', }
 // var gMailSortBy = { txt: '' }
 // var gMailPageIdx
 
@@ -23,8 +23,13 @@ export const emailService = {
 
 function query() {
     return storageService.query(EMAIL_KEY).then(emails => {
-
+        console.log('before filtering', emails);
+        console.log('gFilterBy', gFilterBy);
         const keys = Object.keys(emails[0])
+
+        if (gFilterBy.showInbox) {
+            emails = emails.filter(email => !email.isSent && !email.isTrash && !email.isDraft)
+        }
 
         if (gFilterBy.showUnread) {
             emails = emails.filter(email => !email.isRead)
@@ -87,6 +92,8 @@ function getFilterBy() {
 }
 
 function setFilterBy(filterBy = {}) {
+    console.log(filterBy);
+    if (filterBy.showInbox !== undefined) gFilterBy.showInbox = filterBy.showInbox
     if (filterBy.showUnread !== undefined) gFilterBy.showUnread = filterBy.showUnread
     if (filterBy.showTrash !== undefined) gFilterBy.showTrash = filterBy.showTrash
     if (filterBy.showDraft !== undefined) gFilterBy.showDraft = filterBy.showDraft

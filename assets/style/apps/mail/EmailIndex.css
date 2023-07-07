@@ -1,12 +1,17 @@
 .email-index-container {
     display: grid;
     grid-template-columns: 1fr 7fr;
-    grid-template-rows: 1fr 23fr;
-    grid-template-areas: 
+    grid-template-rows: 60px calc(100% - 60px);
+    grid-template-areas:
         "compose    search"
         "labels     emails"
     ;
-    gap: 1 rem;
+    gap: 1rem;
+    margin: .5rem;
+}
+
+br {
+    grid-area: empty;
 }
 
 .compose-bar {
@@ -23,7 +28,7 @@
 
 nav.label-container {
     grid-area: labels;
-    padding: 1rem;
+    padding: 0 1rem 1rem;
 }
 
 ul.label-container {
@@ -55,4 +60,8 @@ fieldset {
 fieldset > * {
     width: 100%;
     border-radius:.7rem;
+}
+
+.compose-bar button {
+    padding: .3em;
 }
