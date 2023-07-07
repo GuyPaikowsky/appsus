@@ -1,0 +1,11 @@
+.email-preview {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fill, 1fr);
+
+}
+
+.email-preview .email-title {
+    font-size: 1rem;
+    font-weight: bold;
+}

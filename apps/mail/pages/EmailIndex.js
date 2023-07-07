@@ -11,7 +11,7 @@ export default {
                 <!-- COMPOSE - NEW EMAIL -->
                 <fieldset class="compose-bar">
                     <legend>C</legend>
-                    <button>Compose</button>
+                    <button @click="onCompose">Compose</button>
                 </fieldset>
 
                 <!-- SEARCH BAR -->
@@ -30,13 +30,20 @@ export default {
                 <section class="email-container">
                     <RouterView :emails="emails" @remove="removeEmail"/>
                 </section>
+
+                <div v-if="isCompose">
+
+                </div>
             </RouterLink>
     `,
     data() {
         return {
             emails: [],
+
             searchTxt: null,
             filterBy: null,
+
+            isCompose: false,
         }
     },
     created() {
@@ -54,9 +61,10 @@ export default {
             })
             .catch(err => showErrorMsg('Was unable to delete email'))
         },
-        // onTrashView() {
-        //     console.log('youre trash!!');
-        // },
+        onCompose() {
+            console.log('compose');
+            this.isCompose = true
+        },
         setFilterBy(filterBy) {
             console.log('EmailIndex - filterBy is:', filterBy);
             this.filterBy = filterBy

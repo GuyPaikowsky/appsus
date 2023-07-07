@@ -1,0 +1,9 @@
+.email-list .clean-list{
+    display: grid;
+    grid-template-columns: 1fr;
+    /* grid-template-rows: repeat(auto-fill, 2rem); */
+}
+
+/* .email-list .clean-list > * {
+    max-height: 2rem;
+} */

@@ -5,7 +5,7 @@ export default {
     template: `
         <section class="email-list">
             <ul class="clean-list">
-                <li v-for="email in emails" :key="email.id">
+                <li class="email" v-for="email in emails" :key="email.id">
                     <EmailPreview :email="email"/>
                     <section>
                         <button @click="onRemoveEmail(email.id)">x</button>
