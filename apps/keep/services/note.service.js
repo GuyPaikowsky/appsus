@@ -19,10 +19,10 @@ export const noteService = {
     get,
     remove,
     save,
-    getEmptyNote,
+    // getEmptyNote,
     // getNextCarId,
-    getFilterBy,
-    setFilterBy,
+    // getFilterBy,
+    // setFilterBy,
     // getCarCountBySpeedMap,
 }
 window.noteService = noteService
@@ -85,6 +85,7 @@ function save(note) {
         return storageService.post(NOTE_KEY, newNote)
     }
 }
+
 function getFilterBy() {
     return {...gFilterBy}
 }
@@ -109,7 +110,7 @@ function getEmptyNote() {
     }
 }
 
-// TODO: Add more note types...
+// TODO: Add todo note types...
 function _createNotes() {
     let notes = utilService.loadFromStorage(NOTE_KEY)
     if (!notes || !notes.length) {
@@ -181,7 +182,6 @@ function _createNotes() {
     }
 }
 
-
 function _createNote({type, info, title, isPinned, style, additionalInfo}) {
     const note = getEmptyNote()
     note.id = utilService.makeId()
@@ -194,7 +194,7 @@ function _createNote({type, info, title, isPinned, style, additionalInfo}) {
         if (note.type === 'NoteImg') {
             note.info.url = additionalInfo
         } else if (note.type === 'NoteTodos') {
-            note.info.todos = additionalInfo
+            note.info.todos = additionalInfo.map(todo => ({txt: todo, done: false}))
         }
     }
     return note
