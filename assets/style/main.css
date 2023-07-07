@@ -19,6 +19,7 @@
 
 
 /* Note App Components */
+@import 'apps/note/NoteList.css';
 @import 'apps/note/NoteAdd.css';
 @import 'apps/note/NotePreview.css';
 @import 'apps/note/NoteColorPicker.css';

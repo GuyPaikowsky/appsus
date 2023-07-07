@@ -1,0 +1,7 @@
+.note-list {
+    column-count: 4;  /* Adjust this to suit your design */
+    column-width: 200px;
+    column-gap: 0.5em;
+    margin-inline-start: 2em;
+    margin-inline-end: 2em;
+}
