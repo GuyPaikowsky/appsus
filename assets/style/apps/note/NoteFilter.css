@@ -7,6 +7,7 @@
     margin-top: 0.5em;
     padding-left: 20%;
     color: #202124;
+
 }
 
 .filter-search-container input {
@@ -17,6 +18,11 @@
     line-height: 1.5rem;
     align-self: center;
     padding: 0.2em;
+    outline: none;
+    resize: none;
+
 }
+
+
 /*normal 16px Google Sans,Roboto,Helvetica,Arial,sans-serif*/
 

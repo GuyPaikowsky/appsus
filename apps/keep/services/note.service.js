@@ -19,11 +19,8 @@ export const noteService = {
     get,
     remove,
     save,
-    // getEmptyNote,
-    // getNextCarId,
-    // getFilterBy,
-    // setFilterBy,
-    // getCarCountBySpeedMap,
+    setFilterBy,
+    getFilterBy,
 }
 window.noteService = noteService
 
@@ -55,7 +52,6 @@ function query() {
                 }
             }
         })
-
         return notes
     })
 }

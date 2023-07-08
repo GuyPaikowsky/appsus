@@ -1,6 +1,6 @@
 import {noteService} from '../services/note.service.js'
 import NoteFilter from '../cmps/NoteFilter.js'
-import NoteAdd from "../cmps/NoteAdd.js";
+import NoteAdd from '../cmps/NoteAdd.js';
 import NoteList from '../cmps/NoteList.js'
 
 export default {
@@ -12,14 +12,15 @@ export default {
           v-if="notes"
           :notes="sortedNotes"
           @remove="removeNote"
-          @update="updateNote"/>
+          @update="updateNote"
+      />
       </section>
     `,
     data() {
         return {
             showTitle: false,
             notes: [],
-            filterBy: null,
+            filterBy: noteService.getFilterBy(),
             newNote: {
                 type: 'NoteTxt',
                 title: '',
@@ -31,25 +32,24 @@ export default {
             }
         }
     },
+    created() {
+        this.setFilterBy(this.filterBy)
+        this.getNotes()
+    },
     computed: {
         sortedNotes() {
-            let notes = [...this.notes]
-            if (this.filterBy) {
-                const regex = new RegExp(this.filterBy.txt, 'i')
-                notes = notes.filter(note => regex.test(note.info.txt))
-                if (this.filterBy.sortOrder !== undefined) {
-                    notes.sort((n1, n2) => (n1.createdAt - n2.createdAt) * this.filterBy.sortOrder)
-                }
-            }
-            return notes.sort((a, b) => b.isPinned - a.isPinned)
+            return this.notes
         }
     },
-    created() {
-        noteService.query()
-            .then(notes => this.notes = notes)
-    },
     methods: {
-
+        getNotes() {
+            noteService.query()
+                .then(notes => this.notes = notes)
+        },
+        setFilterBy(filterBy) {
+            noteService.setFilterBy(filterBy)
+            this.getNotes()
+        },
         addNote(newNote) {
             console.log('Before save in NoteIndex:', newNote);
             noteService.save(newNote)
@@ -81,18 +81,14 @@ export default {
         updateNote(updatedNote) {
             console.log('NoteIndex updateNote updatedNote', updatedNote)
             noteService.save(updatedNote)
-                .then((result) => {
-                    console.log('noteService.save result', result)
+                .then(() => {
                     const idx = this.notes.findIndex(note => note.id === updatedNote.id)
                     this.notes.splice(idx, 1, updatedNote)
+                    this.getNotes() // Refresh the notes array
                 })
                 .catch(err => {
                     console.log(err)
                 })
-        },
-        setFilterBy(filterBy) {
-
-            this.filterBy = filterBy
         }
     },
     components: {

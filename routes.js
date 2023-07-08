@@ -2,7 +2,7 @@ import HomePage from './views/HomePage.js'
 import AboutUs from './views/AboutUs.js'
 
 import NoteIndex from './apps/keep/pages/NoteIndex.js'
-import NoteDetails from './apps/keep/pages/NoteDetails.js'
+import NoteDetails from './apps/keep/cmps/NoteDetails.js'
 import NoteEdit from './apps/keep/pages/NoteIndex.js'
 
 import EmailIndex from './apps/mail/pages/EmailIndex.js'
