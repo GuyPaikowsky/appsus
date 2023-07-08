@@ -28,9 +28,10 @@ export default {
           <textarea v-if="newNote.type !== 'NoteTodos'"
                     v-model="newNote.info.txt"
                     :placeholder="placeholderText"
-                    required/>
+                    required
+                    ref="noteTextarea"
+                    @input="adjustTextareaHeight"/>
         </div>
-
         <div v-if="showTitle" class="btn-type-container">
           <span class="material-symbols-outlined"
                 @click="setNoteType('NoteTxt')">text_fields</span>
@@ -40,7 +41,7 @@ export default {
                 @click="setNoteType('NoteTodos')">check_box</span>
         </div>
       </form>
-<!--      <button @click="onAddNote">Add Note</button>-->
+      <!--      <button @click="onAddNote">Add Note</button>-->
       </div>`,
     data() {
         return {
@@ -144,12 +145,25 @@ export default {
         onClickOutside() {
             if (this.isFormEmpty) return
             this.onAddNote()
+            this.resetTextareaHeight()
             this.showTitle = false
             this.newNote.type = 'NoteTxt'
             this.newNote.title = ''
             this.newNote.info.txt = ''
             this.newNote.info.todos = []
-        }
+
+        },
+        adjustTextareaHeight() {
+            let element = this.$refs.noteTextarea;
+            if (element.scrollHeight > element.clientHeight) {
+                element.style.height = element.scrollHeight + 'px';
+            }
+        },
+        resetTextareaHeight() {
+            if (this.$refs.noteTextarea) {
+                this.$refs.noteTextarea.style.height = '2.875em';
+            }
+        },
     },
     // adapted from https://vueschool.io/lessons/click-outside-directive-1
     directives: {

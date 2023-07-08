@@ -31,13 +31,17 @@ function query() {
     return storageService.query(NOTE_KEY).then(notes => {
         if (gFilterBy.txt) {
             const regex = new RegExp(gFilterBy.txt, 'i')
-            notes = notes.filter(note => regex.test(note.info.txt) || regex.test(note.info.title))
+            let titleMatches = []
+            let textMatches = []
+            notes.forEach(note => {
+                if (regex.test(note.title)) {
+                    titleMatches.push(note)
+                } else if (regex.test(note.info.txt)) {
+                    textMatches.push(note)
+                }
+            })
+            notes = [...titleMatches, ...textMatches]
         }
-
-        if (gFilterBy.type) {
-            notes = notes.filter(note => note.type === gFilterBy.type)
-        }
-
         notes.sort((n1, n2) => {
             if (n1.isPinned && !n2.isPinned) {
                 return -1

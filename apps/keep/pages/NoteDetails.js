@@ -25,7 +25,7 @@ export default {
 				this.note = JSON.parse(JSON.stringify(note)) // deep copy
 			})
 			.catch(err => {
-				alert('Cannot load note')
+				alert(`Cannot load note ${err}`)
 				this.$router.push('/note')
 			})
 	},
@@ -36,7 +36,7 @@ export default {
 					this.$router.push('/note')
 				})
 				.catch(err => {
-					alert('Cannot save note')
+					alert(`Cannot save note ${err}`)
 				})
 		}
 	},

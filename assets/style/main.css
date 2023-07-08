@@ -17,10 +17,13 @@
 @import 'apps/mail/EmailIndex.css';
 @import 'apps/note/NoteIndex.css';
 
-
-/* Note App Components */
+/* Mail App Components */
 @import 'apps/mail/EmailList.css';
 @import 'apps/mail/cmps/EmailPreview.css';
+
+
+/* Note App Components */
+@import 'apps/note/NoteFilter.css';
 @import 'apps/note/NoteList.css';
 @import 'apps/note/NoteAdd.css';
 @import 'apps/note/NotePreview.css';

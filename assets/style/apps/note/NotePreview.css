@@ -16,6 +16,9 @@
     font-size: .875rem;
     font-weight: 400;
     line-height: 1.5rem;
+
+    word-wrap: break-word;
+    overflow-wrap: break-word;
 }
 
 .note-preview.h3 {
@@ -43,6 +46,14 @@
     opacity: 1;
 }
 
+.note-preview .task-checkbox:hover {
+    background-color: rgba(95, 99, 104, 0.157);
+    opacity: 0.87;
+    border-radius: 8px;
+
+
+}
+
 .note-actions {
     position: relative;
 }
@@ -56,7 +67,3 @@
     background-color: rgba(95, 99, 104, 0.157);
     border-radius: 25px;
 }
-
-/*.note-title:focus, .note-content:focus {*/
-/*    outline: none;*/
-/*}*/

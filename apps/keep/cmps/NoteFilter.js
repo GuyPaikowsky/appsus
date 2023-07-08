@@ -1,14 +1,22 @@
 export default {
 	template: `
         <section class="note-filter">
-            <input 
+
+<!--		<div class="search-icon">-->
+<!--			<i class="material-symbols-outlined">search</i>-->
+<!--		</div>-->
+		<div class="filter-search-container">
+            <input
                 v-model="filterBy.txt" 
                 type="text" 
-                placeholder="search">
-            <select v-model="filterBy.sortOrder">
-                <option value="1">Newest to oldest</option>
-                <option value="-1">Oldest to newest</option>
-            </select>
+                placeholder="Search"/>
+		</div>
+		
+<!--            <select v-model="filterBy.sortOrder">-->
+<!--                <option value="1">Newest to oldest</option>-->
+<!--                <option value="-1">Oldest to newest</option>-->
+<!--            </select>-->
+		
         </section>
     `,
 	data() {

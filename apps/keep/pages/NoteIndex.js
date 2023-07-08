@@ -91,6 +91,7 @@ export default {
                 })
         },
         setFilterBy(filterBy) {
+
             this.filterBy = filterBy
         }
     },
