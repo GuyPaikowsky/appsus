@@ -19,7 +19,6 @@ export default {
 			this.$emit('remove', noteId)
 		},
 		onUpdateNote(updatedNote) {
-			console.log('NoteList onUpdateNote updatedNote', updatedNote)
 			this.$emit('update', updatedNote)
 		}
 	},

@@ -91,7 +91,6 @@ export default {
             if (this.newNote.type === 'NoteImg') {
                 this.newNote.info.url = this.newNote.info.txt
                 if (!this.checkURL(this.newNote.info.url)) {
-                    console.log('Image URL is not valid.')
                     return
                 }
             }
@@ -107,7 +106,6 @@ export default {
                     new URL(enteredURL)
                     this.newNote.info = {url: enteredURL}
                 } catch (_) {
-                    console.log('Invalid URL')
                     return
                 }
             }
