@@ -178,6 +178,34 @@ function _createNotes() {
             style: {backgroundColor: '#FFFFFF'},
             additionalInfo: 'https://picsum.photos/300/200'
         }))
+        notes.push(_createNote({
+            type: 'NoteTodos',
+            title: 'Potion Ingredients',
+            isPinned: false,
+            style: {backgroundColor: '#FFFFFF'},
+            info: {
+                todos: [
+                    {txt: 'Eye of Newt', done: true},
+                    {txt: 'Toe of Frog', done: false},
+                    {txt: 'Wool of Bat', done: false},
+                    {txt: 'Tongue of Dog', done: false},
+                ]
+            }
+        }))
+        notes.push(_createNote({
+            type: 'NoteTodos',
+            title: 'Shopping List',
+            isPinned: false,
+            style: {backgroundColor: '#FFFFFF'},
+            info: {
+                todos: [
+                    {txt: 'Milk', done: false},
+                    {txt: 'Eggs', done: false},
+                    {txt: 'Bread', done: true},
+                    {txt: 'Butter', done: false},
+                ]
+            }
+        }))
         utilService.saveToStorage(NOTE_KEY, notes)
     }
 }

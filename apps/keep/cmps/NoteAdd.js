@@ -1,7 +1,7 @@
 export default {
     template: `
       <div class="note-form">
-      <form @submit.prevent="addNote">
+      <form @submit.prevent="addNote" v-click-outside="onClickOutside">
         <div class="note-input-container" @click="expandForm">
           <input v-if="showTitle" v-model="newNote.title" placeholder="Title..." class="title-input">
           <div v-if="newNote.type === 'NoteTodos'">
@@ -40,9 +40,8 @@ export default {
                 @click="setNoteType('NoteTodos')">check_box</span>
         </div>
       </form>
-      <button @click="onAddNote">Add Note</button>
+<!--      <button @click="onAddNote">Add Note</button>-->
       </div>`,
-
     data() {
         return {
             showTitle: false,
@@ -67,6 +66,18 @@ export default {
     computed: {
         placeholderText() {
             return this.newNote.type === 'NoteImg' ? 'Enter image URL...' : 'Take a note...'
+        },
+        isFormEmpty() {
+            switch (this.newNote.type) {
+                case 'NoteTxt':
+                    return !this.newNote.info.txt
+                case 'NoteImg':
+                    return !this.newNote.info.url
+                case 'NoteTodos':
+                    return !this.newNote.info.todos.length
+                default:
+                    return false
+            }
         }
     },
     methods: {
@@ -129,6 +140,31 @@ export default {
         },
         setNoteType(type) {
             this.newNote.type = type
+        },
+        onClickOutside() {
+            if (this.isFormEmpty) return
+            this.onAddNote()
+            this.showTitle = false
+            this.newNote.type = 'NoteTxt'
+            this.newNote.title = ''
+            this.newNote.info.txt = ''
+            this.newNote.info.todos = []
+        }
+    },
+    // adapted from https://vueschool.io/lessons/click-outside-directive-1
+    directives: {
+        clickOutside: {
+            mounted(el, binding) {
+                el.__ClickOutsideHandler__ = (event) => {
+                    if (!(el === event.target | el.contains(event.target))) {
+                        binding.value(event);
+                    }
+                }
+                document.body.addEventListener('click', el.__ClickOutsideHandler__)
+            },
+            unmounted(el) {
+                document.body.removeEventListener('click', el.__ClickOutsideHandler__)
+            },
         }
     }
 }

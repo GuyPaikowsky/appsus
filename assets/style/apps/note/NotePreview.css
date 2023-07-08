@@ -10,6 +10,20 @@
     border: 1px solid #e0e0e0;
     border-radius: 8px;
     transition: 0.3s ease;
+
+    letter-spacing: .00625em;
+    font-family: Roboto, sans-serif;
+    font-size: .875rem;
+    font-weight: 400;
+    line-height: 1.5rem;
+}
+
+.note-preview.h3 {
+    letter-spacing: .00625em;
+    font-family: Roboto, sans-serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.5rem;
 }
 
 .note-preview:hover {
