@@ -39,6 +39,11 @@ function query() {
             })
             notes = [...titleMatches, ...textMatches]
         }
+
+        if (gFilterBy.type) {
+            notes = notes.filter(note => note.type === gFilterBy.type)
+        }
+
         notes.sort((n1, n2) => {
             if (n1.isPinned && !n2.isPinned) {
                 return -1
@@ -127,7 +132,7 @@ function _createNotes() {
             info: 'Who am I? I dont know',
             title: 'Reading',
             isPinned: true,
-            style: {backgroundColor: '#FFFFFF'}
+            style: {backgroundColor: '#E6C9A8'}
         }))
         notes.push(_createNote({
             type: 'NoteTxt',
@@ -148,14 +153,14 @@ function _createNotes() {
             info: 'Learn to cook ptitim',
             title: '',
             isPinned: false,
-            style: {backgroundColor: '#FFFFFF'}
+            style: {backgroundColor: '#D6AEFB'}
         }))
         notes.push(_createNote({
             type: 'NoteTxt',
             info: 'Take care of my fleas',
             title: 'Health Concerns',
             isPinned: true,
-            style: {backgroundColor: '#FFFFFF'}
+            style: {backgroundColor: '#AFCBFA'}
         }))
         notes.push(_createNote({
             type: 'NoteImg',
@@ -168,14 +173,14 @@ function _createNotes() {
             type: 'NoteImg',
             title: 'Starlight Symphony',
             isPinned: true,
-            style: {backgroundColor: '#FFFFFF'},
+            style: {backgroundColor: '#F28B82'},
             additionalInfo: 'https://picsum.photos/300/200'
         }))
         notes.push(_createNote({
             type: 'NoteImg',
             title: 'Captivating Landscape',
             isPinned: false,
-            style: {backgroundColor: '#FFFFFF'},
+            style: {backgroundColor: '#E8EAED'},
             additionalInfo: 'https://picsum.photos/300/200'
         }))
         notes.push(_createNote({

@@ -6,6 +6,12 @@ import NoteList from '../cmps/NoteList.js'
 export default {
     template: `
       <section class="note-index">
+      <div class="sidebar-filter">
+        <span @click="filterByType('NoteTxt')" class="material-symbols-outlined">text_fields</span>
+        <span @click="filterByType('NoteImg')" class="material-symbols-outlined">image</span>
+        <span @click="filterByType('NoteTodos')" class="material-symbols-outlined">check_box</span>
+        <span @click="filterByType('')" class="material-symbols-outlined">sticky_note_2</span>
+      </div>
       <NoteFilter @filter="setFilterBy"/>
       <NoteAdd @add="addNote"/>
       <NoteList
@@ -16,6 +22,7 @@ export default {
       />
       </section>
     `,
+
     data() {
         return {
             showTitle: false,
@@ -50,6 +57,11 @@ export default {
             noteService.setFilterBy(filterBy)
             this.getNotes()
         },
+        filterByType(type) {
+            this.setFilterBy({ type }); // Set the filter to the selected type
+            this.getNotes(); // Update the notes based on the filter
+        },
+
         addNote(newNote) {
             console.log('Before save in NoteIndex:', newNote);
             noteService.save(newNote)

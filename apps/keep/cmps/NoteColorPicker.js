@@ -23,14 +23,14 @@ export default {
     `,
     methods: {
         chooseColor(color) {
-            this.chosenColor = color;
-            this.$emit('color-chosen', color);
+            this.chosenColor = color
+            this.$emit('color-chosen', color)
         },
         previewColor(color) {
-            this.$emit('color-preview', color);
+            this.$emit('color-preview', color)
         },
         resetColor() {
-            this.$emit('color-reset');
+            this.$emit('color-reset')
         }
     }
 }

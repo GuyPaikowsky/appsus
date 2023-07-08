@@ -18,15 +18,14 @@ export default {
                 <path v-else
                       d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
               </svg>
-              <input v-model="todo.txt" 
+              <input v-model="todo.txt"
                      :class="{'todo-completed': todo.done}" class="task-input">
             </div>
             <div class="task-line">
-              <input v-model="todoTxt" 
-                     placeholder="Add new task..." 
-                     class="task-input" 
+              <input v-model="todoTxt"
+                     placeholder="Add new task..."
+                     class="task-input"
                      @keyup.enter="addTodoItem">
-<!--              <button @click.prevent="addTodoItem" class="add-task-button">Add task</button>-->
             </div>
           </div>
           <textarea v-if="newNote.type !== 'NoteTodos'"
@@ -161,14 +160,14 @@ export default {
 
         },
         adjustTextareaHeight() {
-            let element = this.$refs.noteTextarea;
+            let element = this.$refs.noteTextarea
             if (element.scrollHeight > element.clientHeight) {
-                element.style.height = element.scrollHeight + 'px';
+                element.style.height = element.scrollHeight + 'px'
             }
         },
         resetTextareaHeight() {
             if (this.$refs.noteTextarea) {
-                this.$refs.noteTextarea.style.height = '2.875em';
+                this.$refs.noteTextarea.style.height = '2.875em'
             }
         },
     },
@@ -177,8 +176,8 @@ export default {
         clickOutside: {
             mounted(el, binding) {
                 el.__ClickOutsideHandler__ = (event) => {
-                    if (!(el === event.target | el.contains(event.target))) {
-                        binding.value(event);
+                    if (!(el === event.target || el.contains(event.target))) {
+                        binding.value(event)
                     }
                 }
                 document.body.addEventListener('click', el.__ClickOutsideHandler__)

@@ -1,5 +1,5 @@
-import NoteColorPicker from "./NoteColorPicker.js";
-import NoteReadMore from "./NoteReadMore.js";
+import NoteColorPicker from "./NoteColorPicker.js"
+import NoteReadMore from "./NoteReadMore.js"
 
 export default {
     props: ['note'],
@@ -7,14 +7,16 @@ export default {
       <article :class="['note-preview', note.isPinned ? 'pinned-preview' : '']"
                :style="{ backgroundColor: previewColor || note.style.backgroundColor }">
       <div class="note-content">
-        <h3>{{ note.title }}</h3>
         <RouterLink :to="'/note/' + note.id">
-          <NoteReadMore v-if="note.type === 'NoteTxt'" :txt="note.info.txt" :length="100"/>
-          <div v-else-if="note.type === 'NoteImg'">
-            <img :src="note.info.url" alt="note.title" class="note-image">
-            <NoteReadMore v-if="note.info.txt" :txt="note.info.txt" :length="100"/>
-          </div>
+          <h3>{{ note.title }}</h3>
         </RouterLink>
+        <NoteReadMore v-if="note.type === 'NoteTxt'" :txt="note.info.txt" :length="100"/>
+        <div v-else-if="note.type === 'NoteImg'">
+          <img :src="note.info.url" alt="note.title" class="note-image">
+          <RouterLink :to="'/note/' + note.id">
+            <NoteReadMore v-if="note.info.txt" :txt="note.info.txt" :length="100"/>
+          </RouterLink>
+        </div>
         <div v-if="note.type === 'NoteTodos'">
           <ul class="todos-list">
             <li v-for="(todo, index) in note.info.todos" :key="index" class="task-line">
@@ -46,33 +48,33 @@ export default {
         return {
             showColorPicker: false,
             previewColor: null
-        };
+        }
     },
     methods: {
         pinNote() {
-            this.$emit('update', {...this.note, isPinned: !this.note.isPinned});
+            this.$emit('update', {...this.note, isPinned: !this.note.isPinned})
         },
         removeNote() {
-            this.$emit('remove', this.note.id);
+            this.$emit('remove', this.note.id)
         },
         toggleColorPicker() {
-            this.showColorPicker = !this.showColorPicker;
-            this.previewColor = null;
+            this.showColorPicker = !this.showColorPicker
+            this.previewColor = null
         },
         changeNoteColor(color) {
-            this.showColorPicker = false;
-            this.previewColor = null;
-            this.$emit('update', {...this.note, style: {backgroundColor: color}});
+            this.showColorPicker = false
+            this.previewColor = null
+            this.$emit('update', {...this.note, style: {backgroundColor: color}})
         },
         onColorPreview(color) {
-            this.previewColor = color;
+            this.previewColor = color
         },
         onColorReset() {
-            this.previewColor = null;
+            this.previewColor = null
         },
         toggleTodo(index) {
-            this.note.info.todos[index].done = !this.note.info.todos[index].done;
-            this.$emit('update', this.note);
+            this.note.info.todos[index].done = !this.note.info.todos[index].done
+            this.$emit('update', this.note)
         }
     },
     components: {

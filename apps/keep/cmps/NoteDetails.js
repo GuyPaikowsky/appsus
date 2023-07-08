@@ -1,20 +1,22 @@
-import {noteService} from "../services/note.service.js"
+import { noteService } from "../services/note.service.js"
 
 export default {
     template: `
       <section class="note-details note-form" v-if="note">
-      <form @submit.prevent="saveNote" class="note-form" :style="{ backgroundColor: note.style.backgroundColor }">
+      <form class="note-form" :style="{ backgroundColor: note.style.backgroundColor }">
         <div class="note-content">
-          <h3>{{ note.title }}</h3>
+          <input type="text" v-model="note.title" :style="{ backgroundColor: note.style.backgroundColor }" required/>
           <textarea v-if="note.type === 'NoteTxt'" v-model="note.info.txt" placeholder="Take a note..."
-                    required></textarea>
+                    :style="{ backgroundColor: note.style.backgroundColor }" required></textarea>
           <div v-else-if="note.type === 'NoteImg'">
             <img :src="note.info.url" alt="note.title" class="note-image">
-            <textarea v-if="note.info.txt" v-model="note.info.txt" placeholder="Take a note..." required></textarea>
+            <textarea v-if="note.info.txt" v-model="note.info.txt" placeholder="Take a note..."
+                      :style="{ backgroundColor: note.style.backgroundColor }" required></textarea>
           </div>
           <div v-if="note.type === 'NoteTodos'">
             <ul class="todos-list">
-              <li v-for="(todo, index) in note.info.todos" :key="index" class="task-line">
+              <li v-for="(todo, index) in note.info.todos" :key="index" class="task-line"
+                  :style="{ backgroundColor: note.style.backgroundColor }">
                 <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 0 24 24" width="24px" fill="#000000"
                      class="task-checkbox" @click.stop="toggleTodo(index)">
                   <path v-if="todo.done"
@@ -22,18 +24,24 @@ export default {
                   <path v-else
                         d="M19 5v14H5V5h14m0-2H5c-1.1 0-2 .9-2 2 v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2z"/>
                 </svg>
-                <span :class="{ 'todo-completed': todo.done }">{{ todo.txt }}</span>
+                <input type="text" v-model="todo.txt" :class="{ 'todo-completed': todo.done }"
+                       :style="{ backgroundColor: note.style.backgroundColor }"
+                       @keyup.enter.stop="index === note.info.todos.length - 1 && addTodo()"/>
               </li>
+              <div class="new-todo" :style="{ backgroundColor: note.style.backgroundColor }">
+                <input type="text" v-model="newTodo" placeholder="Add a new todo item" @keyup.enter="addTodo()"/>
+              </div>
             </ul>
           </div>
+          <div>Created {{ createdAgo }}</div>
         </div>
-        <div>Created {{ createdAgo }} ago</div>
-        <button type="submit">Save</button>
       </form>
-      </section>`,
+      </section>
+    `,
     data() {
         return {
-            note: null
+            note: null,
+            newTodo: ''
         }
     },
     created() {
@@ -48,28 +56,38 @@ export default {
             })
     },
     methods: {
+        addTodo() {
+            if (!this.newTodo) return
+            this.note.info.todos.push({txt: this.newTodo, done: false})
+            this.newTodo = ''
+            this.saveNote()
+        },
         saveNote() {
             noteService.save(this.note)
                 .then(() => {
-                    this.$router.push('/note')
+                    // Saved successfully
                 })
                 .catch(err => {
                     alert(`Cannot save note ${err}`)
                 })
         },
         toggleTodo(index) {
-            this.note.info.todos[index].done = !this.note.info.todos[index].done;
-            noteService.save(this.note)
-                .catch(err => {
-                    alert(`Cannot save note ${err}`)
-                })
+            this.note.info.todos[index].done = !this.note.info.todos[index].done
         }
     },
     computed: {
         createdAgo() {
-            const diffTime = Math.abs(new Date() - new Date(this.note.createdAt));
-            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
-            return `${diffDays} day(s)`;
+            const diffTime = Math.abs(new Date() - new Date(this.note.createdAt))
+            const diffMinutes = Math.floor((diffTime / 1000) / 60)
+            const diffHours = Math.floor((diffTime / (1000 * 60 * 60)))
+            const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24))
+            const diffWeeks = Math.floor(diffTime / (1000 * 60 * 60 * 24 * 7))
+
+            if (diffMinutes < 1) return 'Just now'
+            else if (diffMinutes < 60) return `${diffMinutes} minute${diffMinutes > 1 ? 's' : ''} ago`
+            else if (diffHours < 24) return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`
+            else if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`
+            else return `${diffWeeks} week${diffWeeks > 1 ? 's' : ''} ago`
         }
     }
 }
