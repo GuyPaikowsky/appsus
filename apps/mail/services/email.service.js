@@ -1,6 +1,6 @@
 import { utilService } from '../../../services/util.service.js'
 import { storageService } from '../../../services/async-storage.service.js'
-import emailList from '../../../assets/data/emails.json' assert { type: 'json' };
+// import emailList from '../../../assets/data/emails.json' assert { type: 'json' };
 
 const EMAIL_KEY = 'emailDB'
 
