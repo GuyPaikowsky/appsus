@@ -4,10 +4,10 @@ import AboutUs from './views/AboutUs.js'
 import NoteIndex from './apps/keep/pages/NoteIndex.js'
 import NoteDetails from './apps/keep/cmps/NoteDetails.js'
 import NoteEdit from './apps/keep/pages/NoteIndex.js'
-
-import EmailIndex from './apps/mail/pages/EmailIndex.js'
-import EmailDetails from './apps/mail/pages/EmailDetails.js'
-import EmailList from './apps/mail/cmps/EmailList.js'
+//
+// import EmailIndex from './apps/mail/pages/EmailIndex.js'
+// import EmailDetails from './apps/mail/pages/EmailDetails.js'
+// import EmailList from './apps/mail/cmps/EmailList.js'
 
 const {createRouter, createWebHashHistory} = VueRouter
 
