@@ -34,48 +34,48 @@ const routerOptions = {
 			path: '/note/edit/:noteId?',
 			component: NoteEdit
 		},
-		{
-			path: '/email',
-			component: EmailIndex,
-			children: [
-				{
-					path: '',
-					name: 'email list',
-					component: EmailList
+		// {
+		// 	path: '/email',
+		// 	component: EmailIndex,
+		// 	children: [
+		// 		{
+		// 			path: '',
+		// 			name: 'email list',
+		// 			component: EmailList
 
-				},
-				{
-					path: ':emailId',
-					name: 'email details',
-					component: EmailDetails,
-				},
-				{
-					path: 'trash',
-					name: 'email trash',
-					component: EmailList,
-				},
-				{
-					path: 'draft',
-					name: 'email draft',
-					component: EmailList,
-				},
-				{
-					path: 'sent',
-					name: 'email sent',
-					component: EmailList,
-				},
-				{
-					path: 'important',
-					name: 'email important',
-					component: EmailList,
-				},
-				{
-					path: 'starred',
-					name: 'email important',
-					component: EmailList,
-				},
-			]
-		},
+		// 		},
+		// 		{
+		// 			path: ':emailId',
+		// 			name: 'email details',
+		// 			component: EmailDetails,
+		// 		},
+		// 		{
+		// 			path: 'trash',
+		// 			name: 'email trash',
+		// 			component: EmailList,
+		// 		},
+		// 		{
+		// 			path: 'draft',
+		// 			name: 'email draft',
+		// 			component: EmailList,
+		// 		},
+		// 		{
+		// 			path: 'sent',
+		// 			name: 'email sent',
+		// 			component: EmailList,
+		// 		},
+		// 		{
+		// 			path: 'important',
+		// 			name: 'email important',
+		// 			component: EmailList,
+		// 		},
+		// 		{
+		// 			path: 'starred',
+		// 			name: 'email important',
+		// 			component: EmailList,
+		// 		},
+		// 	]
+		// },
 	],
 }
 export const router = createRouter(routerOptions)
